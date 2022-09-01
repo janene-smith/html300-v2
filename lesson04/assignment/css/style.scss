@@ -56,7 +56,7 @@ body {
 
 .item1 { // containerA
     padding: 0;
-    color: black;
+    color: $primary-color;
     font-size: 1.5em;
   // text-align: left;
 }
@@ -206,12 +206,13 @@ h1 {
     grid-area: sidebar;
 }
 div.aside {
-  border: .5em solid midnightblue;
+  border: .1em solid midnightblue;
   float: left;
   width: 100%;
-  transition: width 3s, height 3s, transform 1s;
   width: 500px;
   height: 386px;
+  border-radius: 10px;
+  transition: width 3s, height 3s, transform 2s;
 
   p {
     font-family: san-sans-serif;
@@ -226,12 +227,11 @@ div.aside {
   background: $theme;
   color: $dimgray;
   text-transform: uppercase;
-  width: 500px;
-  height: 386px;
-  display: flex;
   margin: 5px;
 
-  &:hover { width: 150px; height: 100px; }
+  &:hover { // Changed from width and height to transform
+    transform: scale(0.5);
+ }
 }
 
 #div1 {
@@ -287,5 +287,6 @@ div.desc {
 /* Start of Footer Area */
 .item6 {
     background-color: $dimgray;
+    color: $black;
     grid-area: footer;
 }
