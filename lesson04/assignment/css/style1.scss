@@ -1,3 +1,9 @@
+/* Universal Statements ($var: value, flow control at-rules @if, @each, @error) */
+/* CSS Statements (Style rules, at-rules(@media, @font-face), mixin using @include, @at-root rule.) */
+/* Top-Level Statements (module loads @use, @import, @mixin, @function) */
+/* Other Statements(property declarations like width)
+
+
 /* Colors
 #ff8c00 // darkorange
 #fffff0 // ivory
@@ -7,18 +13,6 @@
 #f0f8ff // aliceblue
 #000000 // black
 */
-html {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-*:after,
-*:before {
-  box-sizing: inherit;
-}
 
 $darkorange: #ff8c00;
 $ivory: #fffff0;
@@ -30,12 +24,16 @@ $aliceblue: #f0f8ff;
 $black: #000;
 
 $font-fam: "arial, helvetica, sans-serif";
-$primary-color: #696969;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     width: 850px;
-    font: 100% $font-fam;
-    color: $primary-color;
+    font-family: Arial, Helvetica, sans-serif;
     /* font-size: 1.2em; */
     line-height: 1.4;
 }
@@ -53,34 +51,28 @@ body {
         'article article article article article'
         'footer footer footer footer footer';
 }
-
-.item1 { // containerA
+.item1 {
     padding: 0;
-    color: black;
+    color: $black;
     font-size: 1.5em;
-  // text-align: left;
+    text-align: left;
 }
-.item2 { // header grid-template-area
+.item2 {
     grid-area: header;
-    // text-align: left;
+    text-align: left;
     padding-left: 1.5em;
     padding-top: .5em;
-}
-/* Header */
-  /* Header background section */
-    h2 h3 {}
-    img {
-        display: block;
-        width: 100%;
-        height:50%;
-        object-fit:cover;
+    /* Header */
+    /* Header image */
+  &__img {
+      display: block;
+      width: 100%;
+      height:50%;
+      object-fit:cover;
     }
-
-    header svg {
-        width:100%;
-        height: 100vh;
-    }
-    .img-overlay-wrap img {
+    /* Header background section */
+    .img-overlay-wrap {
+      &__img {
         position: absolute;
         max-width: 100%;
         opacity: 0.5;
@@ -88,13 +80,15 @@ body {
         left: 0;
         align: center;
         z-index: -1;
-    }
-    .img-overlay-wrap svg {
+      }
+      &__svg {
         position: absolute;
         verticle-align: center;
-    }
-    /* End Header background section */
-
+        width:100%;
+        height: 100vh;
+      }
+      /* End Header background section */
+}
 /* Master navigation */
 .itemN {
     grid-area: nav;
@@ -143,7 +137,6 @@ body {
 /* Start of Main Content */
 .item3 {
     grid-area: main;
-    clear: both;
 }
 /* Introduction with box transitions and transform */
 .intro {
@@ -175,7 +168,7 @@ body {
 h1 {
   font-size: 3em;
   font-weight: bold;
-  font-family: $font-fam;
+  font-family:serif;
 }
 
 /* End of Introduction with box transitions and transform */
@@ -206,28 +199,25 @@ h1 {
     grid-area: sidebar;
 }
 div.aside {
+  margin: 10px;
   border: .5em solid midnightblue;
   float: left;
   width: 100%;
   transition: width 3s, height 3s, transform 1s;
-  width: 500px;
-  height: 386px;
-
-  p {
+  &__p {
     font-family: san-sans-serif;
-    font-size: 1em;
+    font-size: 2em;
+    text-align: center;
   }
-  // div:hover.left {
-  //   width: 10em;
-  // }
+  &:hover.left { width: 10em; }
 }
 
 @mixin theme($theme: Aliceblue) {
   background: $theme;
-  color: $dimgray;
-  text-transform: uppercase;
+  color: #fff;
   width: 500px;
   height: 386px;
+  transition-timing-function: linear;
   display: flex;
   margin: 5px;
 
@@ -236,56 +226,53 @@ div.aside {
 
 #div1 {
   @include theme;
-  transition-timing-function: linear;
 }
 #div2 {
-  @include theme;
-  transition-timing-function: ease;
+  @include theme($theme: Darkorange);
 }
 #div3 {
   @include theme;
-  background: $darkorange;
-  transition-timing-function: ease-in-out;
 }
+
+
 
 /* Start of Article Content - Gallery */
 .item5 {
     grid-area: article;
-    padding-left: .5em;
-    padding-top: 2.5em;
+    padding-left: 1em;
+    padding-top: 1.5em;
     padding-bottom: 2.5em;
     background-color: $black;
     color: $white;
     overflow:visible;
 }
-div.gallery {
-  margin: 5px;
-  border: 1px solid $lightgray;
-  float: left;
-  width: 225px;
-  background: $black; /* Added to remove outlines to cards when they grow */
-  transition: width 2s, height 2s, transform 1s;
-}
+  div.gallery {
+    margin: 5px;
+    border: 1px solid $lightgray;
+    float: left;
+    width: 225px;
+    background: $black; /* Added to remove outlines to cards when they grow */
+    transition: width 3s, height 3s, transform 1s;
+  }
 
-div.gallery:hover {
-  border: 1px solid darkorange;
-  transform: scale(1.5,1.5);
-}
+  div.gallery:hover {
+    border: 1px solid $darkorange;
+    transform: scale(1.5,1.5);
+  }
 
-div.gallery img {
-  width: 100%;
-  height: 200px;
-}
+  div.gallery img {
+    width: 100%;
+    height: 200px;
+  }
 
-div.desc {
-  padding: 0;
-  text-align: center;
-}
-
+  div.desc {
+    padding: 0;
+    text-align: center;
+  }
 /* End of Article Content - Gallery */
 
 /* Start of Footer Area */
 .item6 {
-    background-color: $dimgray;
+    background-color: $darkgray;
     grid-area: footer;
 }

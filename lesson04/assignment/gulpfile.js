@@ -5,7 +5,7 @@ const {
     series,
     watch
 } = require('gulp')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const autoprefix = require('gulp-autoprefixer')
 const plumber = require('gulp-plumber')
 const cleanCss = require('gulp-clean-css')
@@ -59,7 +59,7 @@ function browserSync() {
             baseDir: './'
         },
         notify: false,
-        browser: "google chrome"
+        browser: "edge"
     });
 }
 
