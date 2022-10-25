@@ -8,6 +8,7 @@
     },
     "author": "UW Front End Cert Program",
     "license": "ISC",
+<<<<<<< HEAD
     "devDependencies": {
         "browser-sync": "^2.27.10",
         "gulp": "^4.0.2",
@@ -21,5 +22,16 @@
         "bootstrap": "^5.2.1",
         "mdb-ui-kit": "^5.0.0",
         "yarn": "^1.22.19"
+=======
+    "engines": {
+        "npm": ">=7.0.0",
+        "node": ">=14.0.0"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.27.9",
+        "gulp": "4.0.2",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.50.1"
+>>>>>>> 6fc08ce4d37b8c367192cd99223952955146b1b7
     }
 }
