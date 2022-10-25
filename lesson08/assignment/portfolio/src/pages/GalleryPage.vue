@@ -5,7 +5,7 @@
     </div>
       <div class="image-wrapper">
       /* Come back later and work on adding in the figure, image, and fig caption components */
-        <img class="thumbnail" v-for="(image, id) in images" :key="id" :src="image.src" :alt="image.alt" />
+        <imgComponent v-for="(image, id) in images" :key="id" :src="image.src" :alt="image.alt" />
       </div>
   </div>
 </template>
@@ -13,7 +13,11 @@
 <script>
 // eslint-disable-next-line
  /* eslint-disable */
+ import imgComponent from "../components/imgComponent.vue"
  export default {
+  components: {
+    imgComponent
+  },
   data () {
       return {
         images: [

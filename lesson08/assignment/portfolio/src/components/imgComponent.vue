@@ -1,0 +1,28 @@
+<template>
+    <img class="thumbnail" :src="src" :alt="alt" />
+</template>
+
+<script>
+    export default {
+        data () {
+            return {
+                props: {
+                    src: {type: String}, 
+                    alt: {type: String},
+
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .thumbnail {
+        float: left;
+        width: 478px;
+        height: 330px;
+        object-fit: cover;
+        padding: 5px;
+
+    }
+</style>
