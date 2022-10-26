@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-//import vueImages from 'vue-images'
+import vueImages from 'vue-images'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import HistoryPage from './pages/HistoryPage.vue'

@@ -11,17 +11,33 @@
 
 <script>
 export default {
-    name: 'App',
-    Components: {
-      
-    },
-  data() {
-    return {
-
-    }
-  }
+    name: 'app',
+      Components: {
+       
+      }
 }
 </script>
+<script>
+    const showHide = {
+      data() {
+        return {
+          isHidden: false
+        }
+      },
+      methods: {
+        toggleShowHide() {
+          this.isHidden = !this.isHidden;
+        }
+      }
+    }
+</script>
+
+<!-- <script>
+//...
+  template: '#image',
+  mixins: [showHide]
+};
+</script> -->
 
 <style>
 #app {
@@ -45,7 +61,7 @@ svg {
   padding: 0rem;
   margin: 0 1rem 0;
   border: solid #f8f9fa;
-  border-width: .2rem 0 0;
+  border-width: .5rem 0 0;
 }
 
 </style>

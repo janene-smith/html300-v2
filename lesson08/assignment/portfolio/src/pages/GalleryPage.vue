@@ -4,8 +4,15 @@
       <img alt="Panorama Arromanches by Olivier Rault" src="../assets/AdobeStock_42498313.jpeg" width=100% height=230px />
     </div>
       <div class="image-wrapper">
-      /* Come back later and work on adding in the figure, image, and fig caption components */
-        <imgComponent v-for="(image, id) in images" :key="id" :src="image.src" :alt="image.alt" />
+      <!-- Come back later and work on adding in the figure, image, and fig caption components -->
+        <imgComponent 
+          v-for="(image, id) in images"
+          :key="id" 
+          :src="image.src" 
+          :alt="image.alt" 
+          :title="image.title" 
+        />
+        <!-- <div id="title">{{ title }}</div> -->
       </div>
   </div>
 </template>
@@ -23,27 +30,33 @@
         images: [
           {
             src: require('../assets/G-Croom-WWII-006-th.jpg'),
-            alt: 'United States MPs on motorbikes in France, 1945'
+            alt: 'United States MPs on motorbikes in France, 1945',
+            title: 'United States MPs on motorbikes in France, 1945'
           },
           {
             src: require('../assets/G-Croom-WWII-010-th.jpg'),
-            alt: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep'
+            alt: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep',
+            title: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep'
           },
           {
             src: require('../assets/G-Croom-WWII-011-th.jpg'),
-            alt: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945'
+            alt: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945',
+            title: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945'
           },
           {
             src: require('../assets/G-Croom-MP-bike-WWII.jpg'),
-            alt: 'MP soldier Gerald Croom on motorbike'
+            alt: 'MP soldier Gerald Croom on motorbike',
+            title: 'MP soldier Gerald Croom on motorbike'
           },
           {
             src: require('../assets/Clarence-Rogers_Andrew-Miller-Texas-th.jpg'),
-            alt: 'Clarence Rogers with Andrew Miller of Texas'
+            alt: 'Clarence Rogers with Andrew Miller of Texas',
+            title: 'Clarence Rogers with Andrew Miller of Texas'
           },
           {
             src: require('../assets/Croom_Staff-Sgt-th.jpg'),
-            alt: 'Gerald Croom with Staff Sgt, unknown.'
+            alt: 'Gerald Croom with Staff Sgt, unknown.',
+            title: 'Gerald Croom with Staff Sgt, unknown.'
           },
         ],
       }
@@ -82,8 +95,9 @@ a {
   width: 478px;
   height: 330px;
   object-fit: cover;
-  padding: 5px;
+  padding: 15px;
 
 }
+
 
 </style>
