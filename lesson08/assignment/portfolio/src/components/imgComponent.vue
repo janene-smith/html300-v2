@@ -1,20 +1,19 @@
 <template>
-    <img class="thumbnail" :src="src" :alt="alt" :title="Title" :figcaption="figcaption" />
-   
+    <img class="thumbnail" :src="src" :alt="alt" :title="Title" />
+ 
 </template>
 
 <script>
     export default {
         data () {
             return {
-                props: {            
-                    src: {type: String}, 
-                    alt: {type: String},
-                    title: {type: String},
-                    figcaption: {type: String},
-
-                }
+                
             }
+        },
+        props: {            
+            src: {type: String}, 
+            alt: {type: String},
+            title: {type: String},
         },
 
     };
@@ -36,5 +35,14 @@
         border-color:darkgray;
         
     }
-
+    @mixin box-shadow($x, $y, $blur, $c) { 
+        -webkit-box-shadow: $x $y $blur $c;
+        -moz-box-shadow: $x $y $blur $c;
+        -ms-box-shadow: $x $y $blur $c;
+        box-shadow: $x $y $blur $c;
+    }
+    div {
+        @include box-shadow(0px, 0px, 4px, #fff);
+    
+    }
 </style>
