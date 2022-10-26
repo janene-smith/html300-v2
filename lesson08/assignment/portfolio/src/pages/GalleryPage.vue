@@ -11,12 +11,9 @@
             :src="image.src" 
             :alt="image.alt" 
             :title="image.title" 
+            :figcaption="image.figcaption"
           />
-          <figComponent
-            v-for="(figure, id) in figures"
-            :key="id"
-            :figcaption="figure.figcaption" 
-          />
+          
       </div>
   </div>
 </template>
@@ -35,52 +32,38 @@
           {
             src: require('../assets/G-Croom-WWII-006-th.jpg'),
             alt: 'United States MPs on motorbikes in France, 1945',
-            title: 'United States MPs on motorbikes in France, 1945'
+            title: 'United States MPs on motorbikes in France, 1945',
+            figcaption: 'United States MPs on motorbikes in France, 1945',
           },
           {
             src: require('../assets/G-Croom-WWII-010-th.jpg'),
             alt: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep',
-            title: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep'
+            title: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep',
+            figcaption: 'Unknown woman and MP Gerald Croom standing with Military Police Jeep',
           },
           {
             src: require('../assets/G-Croom-WWII-011-th.jpg'),
             alt: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945',
-            title: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945'
+            title: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945',
+            figcaption: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945',
           },
           {
             src: require('../assets/G-Croom-MP-bike-WWII.jpg'),
             alt: 'MP soldier Gerald Croom on motorbike',
-            title: 'MP soldier Gerald Croom on motorbike'
+            title: 'MP soldier Gerald Croom on motorbike',
+            figcaption: 'MP soldier Gerald Croom on motorbike',
           },
           {
             src: require('../assets/Clarence-Rogers_Andrew-Miller-Texas-th.jpg'),
             alt: 'Clarence Rogers with Andrew Miller of Texas',
-            title: 'Clarence Rogers with Andrew Miller of Texas'
+            title: 'Clarence Rogers with Andrew Miller of Texas',
+            figcaption: 'Clarence Rogers with Andrew Miller of Texas',
           },
           {
             src: require('../assets/Croom_Staff-Sgt-th.jpg'),
             alt: 'Gerald Croom with Staff Sgt, unknown.',
-            title: 'Gerald Croom with Staff Sgt, unknown.'
-          },
-        ],
-        figures: [
-          {
-            figcaption: require('United States MPs on motorbikes in France, 1945')
-          },
-          {
-            figcaption: require('Unknown woman and MP Gerald Croom standing with Military Police Jeep')
-          },
-          {
-            figcaption: require('Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945')
-          },
-          {
-            figcaption: require('MP soldier Gerald Croom on motorbike')
-          },
-          {
-            figcaption: require('Clarence Rogers with Andrew Miller of Texas')
-          },
-          {
-            figcaption: require('Gerald Croom with Staff Sgt, unknown.')
+            title: 'Gerald Croom with Staff Sgt, unknown.',
+            figcaption: 'Gerald Croom with Staff Sgt, unknown.',
           },
         ],
       }

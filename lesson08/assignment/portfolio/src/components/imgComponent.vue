@@ -1,5 +1,5 @@
 <template>
-    <img class="thumbnail" :src="src" :alt="alt" :title="Title" />
+    <img class="thumbnail" :src="src" :alt="alt" :title="Title" :figcaption="figcaption" />
    
 </template>
 
@@ -11,18 +11,12 @@
                     src: {type: String}, 
                     alt: {type: String},
                     title: {type: String},
+                    figcaption: {type: String},
 
                 }
             }
         },
-_template: '#image',
-get template() {
-return this._template;
-},
-set template(value) {
-this._template = value;
-},
-        mixins: [showHide]
+
     };
 </script>
 
