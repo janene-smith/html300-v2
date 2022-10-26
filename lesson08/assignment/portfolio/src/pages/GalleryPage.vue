@@ -4,15 +4,19 @@
       <img alt="Panorama Arromanches by Olivier Rault" src="../assets/AdobeStock_42498313.jpeg" width=100% height=230px />
     </div>
       <div class="image-wrapper">
-      <!-- Come back later and work on adding in the figure, image, and fig caption components -->
-        <imgComponent 
-          v-for="(image, id) in images"
-          :key="id" 
-          :src="image.src" 
-          :alt="image.alt" 
-          :title="image.title" 
-        />
-        <!-- <div id="title">{{ title }}</div> -->
+        <!-- Come back later and work on adding in the figure, image, and fig caption components -->
+          <imgComponent 
+            v-for="(image, id) in images"
+            :key="id" 
+            :src="image.src" 
+            :alt="image.alt" 
+            :title="image.title" 
+          />
+          <figComponent
+            v-for="(figure, id) in figures"
+            :key="id"
+            :figcaption="figure.figcaption" 
+          />
       </div>
   </div>
 </template>
@@ -59,8 +63,29 @@
             title: 'Gerald Croom with Staff Sgt, unknown.'
           },
         ],
+        figures: [
+          {
+            figcaption: require('United States MPs on motorbikes in France, 1945')
+          },
+          {
+            figcaption: require('Unknown woman and MP Gerald Croom standing with Military Police Jeep')
+          },
+          {
+            figcaption: require('Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945')
+          },
+          {
+            figcaption: require('MP soldier Gerald Croom on motorbike')
+          },
+          {
+            figcaption: require('Clarence Rogers with Andrew Miller of Texas')
+          },
+          {
+            figcaption: require('Gerald Croom with Staff Sgt, unknown.')
+          },
+        ],
       }
     },
+
   }
 </script>
 
