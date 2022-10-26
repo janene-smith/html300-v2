@@ -15,7 +15,13 @@
                 }
             }
         },
-        template: '#image',
+_template: '#image',
+get template() {
+return this._template;
+},
+set template(value) {
+this._template = value;
+},
         mixins: [showHide]
     };
 </script>
