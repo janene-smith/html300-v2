@@ -17,27 +17,6 @@ export default {
       }
 }
 </script>
-<script>
-    const showHide = {
-      data() {
-        return {
-          isHidden: false
-        }
-      },
-      methods: {
-        toggleShowHide() {
-          this.isHidden = !this.isHidden;
-        }
-      }
-    }
-</script>
-
-<!-- <script>
-//...
-  template: '#image',
-  mixins: [showHide]
-};
-</script> -->
 
 <style>
 #app {

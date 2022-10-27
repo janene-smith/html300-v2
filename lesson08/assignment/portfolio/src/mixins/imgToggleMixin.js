@@ -1,4 +1,5 @@
 export const showHide = {
+    
     data() {
         return {
             isHidden: false
@@ -10,3 +11,4 @@ export const showHide = {
         }
     }
 }
+

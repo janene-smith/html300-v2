@@ -1,12 +1,12 @@
 <template>
     <img class="thumbnail" :src="src" :alt="alt" :title="Title" />
- 
+
 </template>
 
 <script>
     export default {
         data () {
-            return {
+           return {
                 
             }
         },
