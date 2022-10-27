@@ -12,7 +12,7 @@
             :alt="image.alt" 
             :title="image.title" 
           />
-          
+          <app-tooltip></app-tooltip>
       </div>
   </div>
 </template>
@@ -99,6 +99,35 @@ a {
   padding: 15px;
 
 }
-
+.tooltip {
+	position: absolute;
+  transform: translate3d(-20%, -160%, 0);
+	background: #000000;
+  color: white;
+  width: 280px;
+	border: 1px solid #8ef5c5;
+}
+.tooltip:after, .tooltip:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.tooltip:after {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #000000;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.tooltip:before {
+	border-color: rgba(142, 245, 197, 0);
+	border-top-color: #8ef5c5;
+	border-width: 11px;
+	margin-left: -11px;
+}
 
 </style>

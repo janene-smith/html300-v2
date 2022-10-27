@@ -1,22 +1,38 @@
 <template>
     <img class="thumbnail" :src="src" :alt="alt" :title="Title" />
-
+    
 </template>
 
 <script>
+import { imgToggleMixin } from '../mixins/imgToggleMixin.js'
     export default {
-        data () {
-           return {
-                
+        mixins: [imgToggleMixin],
+        data() {
+            return {
+                message: 'I take priority.'
             }
         },
-        props: {            
-            src: {type: String}, 
-            alt: {type: String},
-            title: {type: String},
-        },
-
+        created() {
+            console.log(this.message)
+        }
     };
+   
+
+    // Working code before above import statement
+    // export default {
+    //     data () {
+    //        return {
+                
+    //         }
+    //     },
+    //     props: {            
+    //         src: {type: String}, 
+    //         alt: {type: String},
+    //         title: {type: String},
+    //     },
+
+    // };
+
 </script>
 
 <style scoped>
@@ -45,4 +61,5 @@
         @include box-shadow(0px, 0px, 4px, #fff);
     
     }
+
 </style>
