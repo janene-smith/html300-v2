@@ -1,41 +1,39 @@
 <template>
-    <img class="thumbnail" :src="src" :alt="alt" :title="Title" />
-    
+    <figure>
+        <!-- Use @click linked to method in mixin. If toggle value is true, add class border -->
+        <img class="thumbnail" 
+            :src="src"
+            :alt="alt" 
+            :title="title"
+            @click="toggleBorder" :class="{ border: toggle }" 
+        />
+        <figcaption>
+            {{ title }}
+        </figcaption>
+    </figure>
 </template>
 
 <script>
-import { imgToggleMixin } from '../mixins/imgToggleMixin.js'
+import toggleBorder from '../mixins/imgToggleMixin.js'
     export default {
-        mixins: [imgToggleMixin],
         data() {
             return {
-                message: 'I take priority.'
+               
             }
         },
-        created() {
-            console.log(this.message)
+        mixins: [
+            toggleBorder
+        ],
+        props: {
+            src: {type: String},
+            alt: {type: String},
+            title: {type: String},
         }
-    };
-   
-
-    // Working code before above import statement
-    // export default {
-    //     data () {
-    //        return {
-                
-    //         }
-    //     },
-    //     props: {            
-    //         src: {type: String}, 
-    //         alt: {type: String},
-    //         title: {type: String},
-    //     },
-
-    // };
-
+    }
+    
 </script>
 
-<style scoped>
+<style scss scoped>
     .thumbnail {
         float: left;
         width: 478px;
@@ -45,21 +43,34 @@ import { imgToggleMixin } from '../mixins/imgToggleMixin.js'
         
         margin: 10px;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         text-decoration-color: black;
         border-style: solid;
-        border-color:darkgray;
+        border-color: darkgray;
         
     }
-    @mixin box-shadow($x, $y, $blur, $c) { 
-        -webkit-box-shadow: $x $y $blur $c;
-        -moz-box-shadow: $x $y $blur $c;
-        -ms-box-shadow: $x $y $blur $c;
-        box-shadow: $x $y $blur $c;
+    /*  Figcaption CSS */
+    figure {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
-    div {
-        @include box-shadow(0px, 0px, 4px, #fff);
+
+    figcaption {
+        display: inline-flex;
+        flex-wrap: wrap;
+        font: italic small sans-serif;
+        padding: .25rem;
+        text-indent: 1rem;
+        text-align: center;
+        color: black;
+    }
     
-    }
+    .imgBorder {
+        border-color: darkgray !important;
+        border-width: 3px !important;
+   }
+
 
 </style>

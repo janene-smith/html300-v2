@@ -1,18 +1,24 @@
 <template>
   <div id="app">
     <div>
-      <img alt="Panorama Arromanches by Olivier Rault" src="../assets/AdobeStock_42498313.jpeg" width=100% height=230px />
+      <img 
+        alt="Panorama Arromanches by Olivier Rault" 
+        src="../assets/AdobeStock_42498313.jpeg" 
+        width=100% 
+        height=230px 
+      />
     </div>
       <div class="image-wrapper">
-        <!-- Come back later and work on adding in the figure, image, and fig caption components -->
-          <imgComponent 
-            v-for="(image, id) in images"
-            :key="id" 
-            :src="image.src" 
-            :alt="image.alt" 
-            :title="image.title" 
-          />
-          <app-tooltip></app-tooltip>
+          <!-- Come back later and work on adding in the figure, image, and fig caption components -->
+            <imgComponent 
+              v-for="(image, id) in images"
+              :key="id" 
+              :src="image.src" 
+              :alt="image.alt" 
+              :title="image.title" 
+            />
+   
+ 
       </div>
   </div>
 </template>
@@ -29,8 +35,8 @@
         return {
           images: [
             {
-              src: require('../assets/G-Croom-WWII-006-th.jpg'),
-              alt: 'United States MPs on motorbikes in France, 1945',
+              src: require('../assets/G-Croom-WWII-006-th.jpg'), 
+              alt: 'United States MPs on motorbikes in France, 1945', 
               title: 'United States MPs on motorbikes in France, 1945'
             },
             {
@@ -40,8 +46,8 @@
             },
             {
               src: require('../assets/G-Croom-WWII-011-th.jpg'),
-              alt: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945',
-              title: 'Unknown man with child in wheel-cart infront of Hotel Bellevue; Deauville, France, 1945'
+              alt: 'Unknown man and child infront of Hotel Bellevue; Deauville, France, 1945',
+              title: 'Unknown man and child infront of Hotel Bellevue; Deauville, France, 1945'
             },
             {
               src: require('../assets/G-Croom-MP-bike-WWII.jpg'),
@@ -97,37 +103,8 @@ a {
   height: 330px;
   object-fit: cover;
   padding: 15px;
+  
+}
 
-}
-.tooltip {
-	position: absolute;
-  transform: translate3d(-20%, -160%, 0);
-	background: #000000;
-  color: white;
-  width: 280px;
-	border: 1px solid #8ef5c5;
-}
-.tooltip:after, .tooltip:before {
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-.tooltip:after {
-	border-color: rgba(0, 0, 0, 0);
-	border-top-color: #000000;
-	border-width: 10px;
-	margin-left: -10px;
-}
-.tooltip:before {
-	border-color: rgba(142, 245, 197, 0);
-	border-top-color: #8ef5c5;
-	border-width: 11px;
-	margin-left: -11px;
-}
 
 </style>

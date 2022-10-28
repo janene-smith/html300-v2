@@ -1,40 +1,17 @@
-import { Modal } from "bootstrap";
+// https://learnvue.co/tutorials/vue-mixins
+// https://v2.vuejs.org/v2/guide/mixins.html?redirect=true
 
-// exports imgToggleMixin message to console when the component is created.
-export const imgToggleMixin = {
-    created() {
-        console.log('Hello from the mixin!')
-    },
-
-// Commenting out working imgToggleMixin
-
-// export const showHide = {
-const toggle = {  
+export default {
     data() {
         return {
-            message: 'I am secondary.',
-            isShowing: false
+            toggle: false
         }
     },
+    
     methods: {
-        toggleShow() {
-            this.isShowing = !this.isShowing;
+        // Toggle changes opposite value when called: image border
+        toggleBorder() {
+            this.toggle = !this.toggle;
         }
     }
 }
-const Modal = {
-    template: '#modal',
-    mixins: [toggle],
-    components: {
-        appChild: Child
-    }
-};
-
-new Vue ({
-    el: '#app',
-    components: {
-        appModal: Modal,
-        appTooltip: Tooltip
-    }
-});
-
