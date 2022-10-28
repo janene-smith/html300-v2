@@ -6,9 +6,17 @@ const {
     watch,
     task
 } = require('gulp')
+<<<<<<< HEAD
+const sass = require('gulp-sass')(require('sass'))
+const autoprefix = require('gulp-autoprefixer')
+const plumber = require('gulp-plumber')
+const cleanCSS = require('gulp-clean-css')
+const browsersync = require('browser-sync')
+=======
 const browserSync = require('browser-sync');
 const server = browserSync.create();
 const sass = require('gulp-sass')(require('sass'));
+>>>>>>> 6fc08ce4d37b8c367192cd99223952955146b1b7
 
 // Directories to watch.
 // If watch & reload isn't working as expected, check that files you want watched can be found in these paths.

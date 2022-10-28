@@ -35,10 +35,20 @@ task('sass', function() {
 });
 
 // BrowserSync configuration
+<<<<<<< HEAD
+function browserSync() {
+    browsersync({
+        server: {
+            baseDir: './'
+        },
+        notify: false,
+        browser: "edge"
+=======
 task('browserSync', function() {
     browserSync.init({
         server: './',
         notify: false
+>>>>>>> 6fc08ce4d37b8c367192cd99223952955146b1b7
     });
 })
 

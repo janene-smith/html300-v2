@@ -8,9 +8,19 @@
     },
     "author": "UW Front End Cert Program",
     "license": "ISC",
+<<<<<<< HEAD
+    "devDependencies": {
+        "browser-sync": "^2.27.10",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-sass": "^5.1.0"
+=======
     "engines": {
         "npm": ">=7.0.0",
         "node": ">=14.0.0"
+>>>>>>> 6fc08ce4d37b8c367192cd99223952955146b1b7
     },
     "devDependencies": {
         "browser-sync": "^2.27.9",
